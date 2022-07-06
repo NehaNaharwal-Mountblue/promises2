@@ -6,7 +6,7 @@ function signIn(username){
     let seconds = currDate.getSeconds();
     return new Promise((resolve, reject) => {
          if(seconds > 30){
-            resolve();
+            resolve(username);
          }
          else{
              reject("Auth Failure : error 500");
