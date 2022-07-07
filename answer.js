@@ -22,7 +22,7 @@ function signIn(username){
 function getBooks(){
     let integer = Math.random();
     return new Promise((resolve, reject) =>{
-        if(integer*1 == 1){
+        if(integer*10 == 1){
             let listOfBooks = books.reduce((acc, eachBook) => {
                 if(!acc[eachBook["name"]]){
                     acc[eachBook["name"]] = [];
@@ -44,7 +44,7 @@ function getBooks(){
 function activity(){
     let logResult = [];
     signIn("username").then((data => {
-        logResult(logData('SignIn-Sucess'));
+        logResult.logData(('SignIn-Sucess'));
         getBooks(books).then((data) => {
             logResult.push(logData('getBook - success'));
         })
